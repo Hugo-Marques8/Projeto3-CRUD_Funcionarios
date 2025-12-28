@@ -44,7 +44,7 @@ btnEditar.addEventListener('click', () => {
 
 const btnExcluir = document.getElementById('btn-clear')
 btnExcluir.addEventListener('click', () => {
-    replaceChildrenExcluir(cardContainer, divAdicionar, divEditar)
+    replaceChildrenExcluir(cardContainer, divAdicionar, divEditar, divEdicao)
     divDeletar.replaceChildren()
     divDeletar.innerHTML = `<p> ID do funcionario 
     <input id="input-excluir" type="number"></input>

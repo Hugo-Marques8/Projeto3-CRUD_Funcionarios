@@ -18,7 +18,7 @@ export async function buscarFuncionariosId(id) {
     return resp.json()
 }
 
-export async function adicionarFuncionario(nome, cargo, departamento, salario, id) {
+export async function adicionarFuncionario(nome, cargo, departamento, salario, admissao) {
     const resp = await fetch('https://695160c570e1605a1089f0f5.mockapi.io/api/v1/funcionarios', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -27,7 +27,7 @@ export async function adicionarFuncionario(nome, cargo, departamento, salario, i
             cargo: cargo,
             departamento: departamento,
             salario: salario,
-            id: id
+            admissao: admissao
         })
     })
     if (!resp.ok) {
