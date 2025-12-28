@@ -1,5 +1,5 @@
 export async function buscarFuncionarios() {
-    const resp = await fetch(`http://localhost:3000/funcionarios`)
+    const resp = await fetch(`https://695160c570e1605a1089f0f5.mockapi.io/api/v1/funcionarios`)
     if (!resp.ok) {
         const erro = new Error('Erro ao buscar funcionários')
         erro.status = resp.status
@@ -9,7 +9,7 @@ export async function buscarFuncionarios() {
 }
 
 export async function buscarFuncionariosId(id) {
-    const resp = await fetch(`http://localhost:3000/funcionarios/${id}`)
+    const resp = await fetch(`https://695160c570e1605a1089f0f5.mockapi.io/api/v1/funcionarios/${id}`)
     if (!resp.ok) {
         const erro = new Error('Erro ao buscar funcionário')
         erro.status = resp.status
@@ -19,7 +19,7 @@ export async function buscarFuncionariosId(id) {
 }
 
 export async function adicionarFuncionario(nome, cargo, departamento, salario, id) {
-    const resp = await fetch('http://localhost:3000/funcionarios', {
+    const resp = await fetch('https://695160c570e1605a1089f0f5.mockapi.io/api/v1/funcionarios', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -39,7 +39,7 @@ export async function adicionarFuncionario(nome, cargo, departamento, salario, i
 }
 
 export async function editarFuncionario(nome, cargo, departamento, salario, id) {
-    const resp = await fetch(`http://localhost:3000/funcionarios/${id}`, {
+    const resp = await fetch(`https://695160c570e1605a1089f0f5.mockapi.io/api/v1/funcionarios/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -59,7 +59,7 @@ export async function editarFuncionario(nome, cargo, departamento, salario, id) 
 }
 
 export async function deletarFuncionarios(id) {
-    const resp = await fetch(`http://localhost:3000/funcionarios/${id}`, {
+    const resp = await fetch(`https://695160c570e1605a1089f0f5.mockapi.io/api/v1/funcionarios/${id}`, {
         method: 'DELETE'
     })
      if (!resp.ok) {
