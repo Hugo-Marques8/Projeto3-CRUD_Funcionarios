@@ -1,0 +1,265 @@
+/* --- Reset e Base --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f3f4f6;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* --- Layout Principal --- */
+.container {
+    background-color: #EEF5FF;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+p.subtitle {
+    color: #7f8c8d;
+}
+
+/* --- Controles e Botões --- */
+.controls {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 15px;
+}
+
+.btn-post {
+    background-color: #00FF00;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-post:hover {
+    background-color: #008000;
+}
+
+.btn-post:active {
+    transform: scale(0.98);
+}
+
+.ul-post {
+    color: #212529;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-enviar {
+    background-color: #00FF00;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-enviar:hover {
+    background-color: #008000;
+}
+
+.btn-enviar:active {
+    transform: scale(0.98);
+}
+
+.btn-load {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-load:hover {
+    background-color: #2563eb;
+}
+
+.btn-load:active {
+    transform: scale(0.98);
+}
+
+.btn-excluir {
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-excluir:hover {
+    background-color: #8B0000;
+}
+
+.btn-editar {
+    background-color: #FFC107;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-editar:hover {
+    background-color: #F39C12;
+}
+
+.btn-input {
+    background-color: #808080;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.div-deletar {
+    color: #212529;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 6px;
+}
+
+/* --- Estados de Feedback (Loading e Erro) --- */
+#loading-message {
+    text-align: center;
+    font-weight: bold;
+    color: #3b82f6;
+    display: none;
+    /* Oculto por padrão, mostre via JS */
+    margin-bottom: 20px;
+}
+
+/* Simples animação de spinner com CSS */
+.spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(59, 130, 246, 0.3);
+    border-radius: 50%;
+    border-top-color: #3b82f6;
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#error-message {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    padding: 15px;
+    border-radius: 6px;
+    text-align: center;
+    margin-bottom: 20px;
+    border: 1px solid #fca5a5;
+    /* Oculto por padrão */
+}
+
+.oculto {
+    display: none;
+}
+
+/* --- Grid de Funcionários --- */
+.employee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* --- Card do Funcionário --- */
+.employee-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-top: 4px solid #3b82f6;
+    /* Detalhe visual */
+}
+
+.employee-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.avatar-placeholder {
+    width: 80px;
+    height: 80px;
+    background-color: #e5e7eb;
+    color: #9ca3af;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.employee-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 5px;
+}
+
+.employee-role {
+    color: #6b7280;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.oculto {
+    display: none;
+}

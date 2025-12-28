@@ -1,0 +1,71 @@
+export async function buscarFuncionarios() {
+    const resp = await fetch(`http://localhost:3000/funcionarios`)
+    if (!resp.ok) {
+        const erro = new Error('Erro ao buscar funcionários')
+        erro.status = resp.status
+        throw erro
+    }
+    return await resp.json()
+}
+
+export async function buscarFuncionariosId(id) {
+    const resp = await fetch(`http://localhost:3000/funcionarios/${id}`)
+    if (!resp.ok) {
+        const erro = new Error('Erro ao buscar funcionário')
+        erro.status = resp.status
+        throw erro
+    }
+    return resp.json()
+}
+
+export async function adicionarFuncionario(nome, cargo, departamento, salario, id) {
+    const resp = await fetch('http://localhost:3000/funcionarios', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            nome: nome,
+            cargo: cargo,
+            departamento: departamento,
+            salario: salario,
+            id: id
+        })
+    })
+    if (!resp.ok) {
+        const erro = new Error ('Servidor indisponivel')
+        erro.status = resp.status
+        throw erro
+    }
+    return resp
+}
+
+export async function editarFuncionario(nome, cargo, departamento, salario, id) {
+    const resp = await fetch(`http://localhost:3000/funcionarios/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            nome: nome,
+            cargo: cargo,
+            departamento: departamento,
+            salario: salario,
+            id: id
+        })
+    })
+     if (!resp.ok) {
+        const erro = new Error ('Servidor indisponivel')
+        erro.status = resp.status
+        throw erro
+    }
+    return resp
+}
+
+export async function deletarFuncionarios(id) {
+    const resp = await fetch(`http://localhost:3000/funcionarios/${id}`, {
+        method: 'DELETE'
+    })
+     if (!resp.ok) {
+        const erro = new Error('Funcionário não encontrado')
+        erro.status = resp.status
+        throw erro
+    }
+    return resp
+}

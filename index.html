@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Funcionários - Estudo API</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Equipe Corporativa</h1>
+            <p class="subtitle">Consumindo dados de API com JavaScript</p>
+        </header>
+
+        <!-- Área de Controle -->
+        <div class="controls">
+            <!-- ID para selecionar no JS -->
+            <button id="btn-adicionar" class="btn-post">Adicionar Funcionário</button>
+            <button id="btn-fetch" class="btn-load">Carregar Funcionários</button>
+            <button id="btn-editar" class="btn-editar">Editar Funcionário</button>
+            <button id="btn-clear" class="btn-excluir ">Excluir Funcionário</button>
+        </div>
+
+        <!-- Feedback Visual (Loading) -->
+        <div id="loading-message" class="oculto">
+            <span class="spinner"></span> Buscando dados no servidor...
+        </div>
+
+        <!-- Feedback Visual (Erro) -->
+        <div id="error-message" class="oculto"> 
+        </div>
+
+        <!-- Container onde os cards serão injetados -->
+        <main id="employee-container" class="employee-grid">
+
+        </main>
+    </div>
+
+    <script type="module" src="main.js"></script>
+    <script type="module" src="ui.js"></script>
+    <script type="module" src="event.js"></script>
+    <script type="module" src="api.js"></script>
+
+
+</body>
+
+</html>
